@@ -3,40 +3,42 @@ from time import perf_counter
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
-huggingface_token = os.environ.get('HUGGINGFACE_TOKEN')
+# Load environment variables
+# load_dotenv()
+# huggingface_token = os.environ.get('HUGGINGFACE_TOKEN')
 
-prompts = [
-    "Hello, my name is",
-    "The president of the United States is",
-    "The capital of France is",
-    "The future of AI is",
-    "What are you capable of?",
-    "Can you write an essay on WW2 for me?",
-    "Can you solve this equation with steps:\n"
-    "10x^2 - 5x = 10",
-]
+# Define sampling parameters
+sampling_params = SamplingParams(temperature=0.6, top_p=0.9, max_tokens=512)
 
-sampling_params = SamplingParams(temperature=0.8, top_p=0.95, max_tokens=256)
-
+# Initialize the model
 llm = LLM(
-    model='../Llama-2-13b-chat-hf', 
-    tokenizer='../Llama-2-13b-chat-hf', 
+    model='../Llama-2-13b-chat-hf',
+    tokenizer='../Llama-2-13b-chat-hf',
     dtype='auto',
 )
 
-start = perf_counter()
+print("Chat with Llama2. Type 'exit' to end the session.")
+while True:
+    # Get input from user
+    user_input = input("You: ")
+    
+    # Exit the loop if user types 'exit'
+    if user_input.lower() == 'exit':
+        break
+    
+    # Record start time
+    start = perf_counter()
+    
+    # Generate response
+    outputs = llm.generate([user_input], sampling_params)
+    
+    # Calculate inference time
+    time = perf_counter() - start
+    
+    # Retrieve the generated text
+    generated_text = outputs[0].outputs[0].text
 
-outputs = llm.generate(prompts, sampling_params)
-
-time = perf_counter() - start
-
-print(f'Inference time: {time:.3f}')
-
-# Print the outputs.
-for output in outputs:
-    prompt = output.prompt
-    generated_text = output.outputs[0].text
-    print(f"Prompt: {prompt!r}, Generated text: {generated_text!r}")
-
+    # Print inference time and response
+    print(f"Inference time: {time:.3f} seconds")
+    print(f"Llama2: {generated_text}")
 
