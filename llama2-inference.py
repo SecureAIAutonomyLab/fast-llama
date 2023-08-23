@@ -1,6 +1,10 @@
 from vllm import LLM, SamplingParams
 from time import perf_counter
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+huggingface_token = os.environ.get('HUGGINGFACE_TOKEN')
 
 prompts = [
     "Hello, my name is",
@@ -12,9 +16,10 @@ prompts = [
     "Can you solve this equation with steps:\n"
     "10x^2 - 5x = 10",
 ]
-sampling_params = SamplingParams(temperature=0.8, top_p=0.95)
 
-llm = LLM(model="meta-llama/Llama-2-13b-hf")
+sampling_params = SamplingParams(temperature=0.8, top_p=0.95, max_tokens=256)
+
+llm = LLM(model="meta-llama/Llama-2-13b-hf", token=huggingface_token)
 
 start = perf_counter()
 
