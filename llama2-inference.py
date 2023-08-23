@@ -8,13 +8,20 @@ import os
 # huggingface_token = os.environ.get('HUGGINGFACE_TOKEN')
 
 # Define sampling parameters
-sampling_params = SamplingParams(temperature=0.6, top_p=0.9, max_tokens=4096)
+sampling_params = SamplingParams(
+    temperature=0.6, 
+    top_p=0.9, 
+    max_tokens=4096,
+    use_beam_search=True,
+    n=5,
+)
 
 # Initialize the model
 llm = LLM(
     model='../Llama-2-13b-chat-hf',
     tokenizer='../Llama-2-13b-chat-hf',
     dtype='auto',
+    tensor_parallel_size=8,
 )
 
 print("Chat with Llama2. Type 'exit' to end the session.")
