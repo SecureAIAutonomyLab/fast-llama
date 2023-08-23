@@ -21,7 +21,7 @@ llm = LLM(
     model='../Llama-2-13b-chat-hf',
     tokenizer='../Llama-2-13b-chat-hf',
     dtype='auto',
-    tensor_parallel_size=8,
+    # tensor_parallel_size=8,
 )
 
 print("Chat with Llama2. Type 'exit' to end the session.")
