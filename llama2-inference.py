@@ -8,7 +8,7 @@ import os
 # huggingface_token = os.environ.get('HUGGINGFACE_TOKEN')
 
 # Define sampling parameters
-sampling_params = SamplingParams(temperature=0.6, top_p=0.9, max_tokens=512)
+sampling_params = SamplingParams(temperature=0.6, top_p=0.9, max_tokens=128)
 
 # Initialize the model
 llm = LLM(
