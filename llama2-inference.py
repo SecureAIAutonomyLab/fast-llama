@@ -19,7 +19,7 @@ prompts = [
 
 sampling_params = SamplingParams(temperature=0.8, top_p=0.95, max_tokens=256)
 
-llm = LLM(model="meta-llama/Llama-2-13b-hf", token=huggingface_token)
+llm = LLM(model="../Llama-2-13b-chat-hf", token=huggingface_token)
 
 start = perf_counter()
 
