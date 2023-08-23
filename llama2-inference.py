@@ -10,7 +10,7 @@ import os
 # Define sampling parameters
 sampling_params = SamplingParams(
     temperature=0, 
-    top_p=0.9, 
+    top_p=1, 
     max_tokens=4096,
     use_beam_search=True,
     n=5,
