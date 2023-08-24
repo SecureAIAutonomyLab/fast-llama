@@ -9,11 +9,11 @@ import os
 
 # Define sampling parameters
 sampling_params = SamplingParams(
-    temperature=0, 
-    top_p=1, 
-    max_tokens=4096,
-    use_beam_search=True,
-    n=5,
+    temperature=0.6, 
+    top_p=0.9, 
+    max_tokens=256,
+    use_beam_search=False,
+    n=1,
 )
 
 # Initialize the model
@@ -21,7 +21,7 @@ llm = LLM(
     model='../Llama-2-13b-chat-hf',
     tokenizer='../Llama-2-13b-chat-hf',
     dtype='auto',
-    tensor_parallel_size=8,
+    tensor_parallel_size=1,
 )
 
 print("Chat with Llama2. Type 'exit' to end the session.")
