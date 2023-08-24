@@ -7,3 +7,7 @@ Repo for learning fast inferencing techniques for llama2
 conda create -n fast-llama python=3.8 -y && \
 pip install vllm
 ```
+
+
+
+# 5 Examples about elections / celebrities / world events
