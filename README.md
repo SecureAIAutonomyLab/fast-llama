@@ -5,7 +5,9 @@ Repo for learning fast inferencing techniques for llama2
 
 ```bash
 conda create -n fast-llama python=3.8 -y && \
-pip install vllm
+pip install vllm && \
+pip install openai && \
+pip install rich
 ```
 
 
