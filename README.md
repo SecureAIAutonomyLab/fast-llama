@@ -9,7 +9,3 @@ pip install vllm && \
 pip install openai && \
 pip install rich
 ```
-
-
-
-# 5 Examples about elections / celebrities / world events
