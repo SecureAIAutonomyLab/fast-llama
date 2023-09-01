@@ -33,7 +33,7 @@ while True:
         break
     
     completion = openai.Completion.create(
-        model="../../Llama-2-13b-chat-hf",
+        model="../Llama-2-13b-chat-hf",
         prompt=chat_prompt(user_input),
         max_tokens=256,
     )
