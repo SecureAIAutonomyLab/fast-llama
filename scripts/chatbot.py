@@ -80,7 +80,7 @@ while True:
     
     prompt = chat_prompt(user_input)
 
-    print(prompt)
+    print(chat_prompt(prompt))
 
     completion = openai.Completion.create(
         model="../aila-llama2-13b-hf",
