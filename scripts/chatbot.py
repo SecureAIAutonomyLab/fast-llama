@@ -61,7 +61,7 @@ Write an SQL query to fetch the first_name, last_name, and salary of all employe
 
 Please provide the SQL query that fulfills this requirement. Write only the SQL Statements, nothing else.
 
-SQL Statements: 
+AI Response:
 '''
 
 
