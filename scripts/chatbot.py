@@ -78,12 +78,17 @@ while True:
     if user_input.lower() == 'exit':
         break
     
+    prompt = chat_prompt(user_input)
+
+    print(prompt)
+
     completion = openai.Completion.create(
         model="../aila-llama2-13b-hf",
         prompt=chat_prompt(user_input),
         max_tokens=2048,
     )
     
+
     # Use rich to make the AI's response green and wrap it
     # ai_response = wrap_text(completion['choices'][0]['text'].strip(), color="green")
     ai_response = completion['choices'][0]['text'].strip()
