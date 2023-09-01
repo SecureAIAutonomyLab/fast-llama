@@ -1,3 +1,3 @@
 #!/bin/bash
 
-python ../scripts/chatbot.py
+python scripts/chatbot.py
