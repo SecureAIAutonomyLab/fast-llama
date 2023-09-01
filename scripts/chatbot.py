@@ -69,22 +69,21 @@ while True:
     # Use rich to print the User's prompt in blue
     if first_input:
         user_input = first_input
+        prompt = chat_prompt(user_input)
     else:
         console.print("[blue]USER: [/blue]", end="")
         user_input = input()
-    
+        prompt = chat_prompt(user_input)
     
     # Exit condition if user types 'exit'
     if user_input.lower() == 'exit':
         break
-    
-    prompt = chat_prompt(user_input)
 
-    print(chat_prompt(prompt))
+    print(prompt)
 
     completion = openai.Completion.create(
         model="../aila-llama2-13b-hf",
-        prompt=chat_prompt(user_input),
+        prompt=prompt,
         max_tokens=2048,
     )
     
