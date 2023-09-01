@@ -59,7 +59,7 @@ INSERT INTO departments (id, name) VALUES
 Requirement:
 Write an SQL query to fetch the first_name, last_name, and salary of all employees who work in the "Engineering" department, sorted by salary in descending order.
 
-Please provide the SQL query that fulfills this requirement.
+Please provide the SQL query that fulfills this requirement. Write only the SQL Statements, nothing else.
 '''
 
 
