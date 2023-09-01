@@ -85,7 +85,8 @@ while True:
     )
     
     # Use rich to make the AI's response green and wrap it
-    ai_response = wrap_text(completion['choices'][0]['text'].strip(), color="green")
+    # ai_response = wrap_text(completion['choices'][0]['text'].strip(), color="green")
+    ai_response = completion['choices'][0]['text'].strip()
     print(f"[red]AILA:[/red] {ai_response}")
 
     first_input = None
