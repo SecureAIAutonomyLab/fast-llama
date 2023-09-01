@@ -15,7 +15,7 @@ def chat_prompt(user_input: str) -> str:
         'You\'re an AI assistant, respond politely and honestly to the USER.\n'
         'Only write one AI response.\n'
         f'USER: {user_input}\n'
-        'AI: '
+        # 'AI: '
     )
 
 def wrap_text(text, width=MAX_WIDTH, color=None):
