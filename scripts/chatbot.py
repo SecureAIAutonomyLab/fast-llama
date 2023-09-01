@@ -35,7 +35,7 @@ while True:
     completion = openai.Completion.create(
         model="../aila-llama2-13b-hf",
         prompt=chat_prompt(user_input),
-        max_tokens=256,
+        max_tokens=1024,
     )
     
     # Use rich to make the AI's response green and wrap it
