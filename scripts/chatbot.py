@@ -65,11 +65,10 @@ Please provide the SQL query that fulfills this requirement. Write only the SQL 
 
 while True:
     # Use rich to print the User's prompt in blue
-    console.print("[blue]USER: [/blue]", end="")
-
     if first_input:
         user_input = first_input
     else:
+        console.print("[blue]USER: [/blue]", end="")
         user_input = input()
     
     
